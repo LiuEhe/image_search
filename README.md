@@ -1,10 +1,8 @@
-收到，以下是Readme的markdown内容：
-
 ## 项目描述
 一个基于Django框架实现的图像相似性搜索网页应用。用户可以通过上传图片到网站，然后该项目会基于预训练的 VGG16 模型提取图像特征，并利用已有图库中的图像特征与上传图片的特征进行比较，计算相似度并呈现给用户。
 
 ## 项目运行效果截图
-![项目运行效果截图](screenshot.png)
+<img src="https://github.com/LiuEhe/image_search/blob/main/result/img_search.jpg" width="192" height="99"><img src="https://github.com/LiuEhe/image_search/blob/main/result/img_search2.jpg" width="192" height="99">
 
 ## 功能
 - 用户可以通过上传图片查询相似图片
@@ -35,9 +33,3 @@
 - 提前准备好图像数据集，并使用预训练的VGG16模型进行特征提取
 - 使用Faiss库创建索引以加速相似图像查询过程
 - 在使用Django框架时，遵从其目录结构和规范
-
-## 个人信息
-- 学号: XXX
-- 年级: XXX
-- 专业: 智能科学与技术
-- 班级: XXX班
