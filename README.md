@@ -33,4 +33,4 @@
 - 提前准备好图像数据集，并使用预训练的VGG16模型进行特征提取
 - 使用Faiss库创建索引以加速相似图像查询过程
 - 在使用Django框架时，遵从其目录结构和规范
-- 数据集请前往[notion](https://liuehe.notion.site/1a7fee02d1f04d09803fc15d20e49cda?pvs=4)https://liuehe.notion.site/1a7fee02d1f04d09803fc15d20e49cda?pvs=4下载
+- 数据集请前往[notion](https://liuehe.notion.site/1a7fee02d1f04d09803fc15d20e49cda?pvs=4)下载
