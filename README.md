@@ -2,7 +2,7 @@
 一个基于Django框架实现的图像相似性搜索网页应用。用户可以通过上传图片到网站，然后该项目会基于预训练的 VGG16 模型提取图像特征，并利用已有图库中的图像特征与上传图片的特征进行比较，计算相似度并呈现给用户。
 
 ## 项目运行效果截图
-<img src="https://github.com/LiuEhe/image_search/blob/main/result/img_search.jpg" width="192" height="99"><img src="https://github.com/LiuEhe/image_search/blob/main/result/img_search2.jpg" width="192" height="99">
+<img src="https://github.com/LiuEhe/image_search/blob/main/result/img_search.jpg" width="384" height="198"><img src="https://github.com/LiuEhe/image_search/blob/main/result/img_search2.jpg" width="384" height="198">
 
 ## 功能
 - 用户可以通过上传图片查询相似图片
