@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>相似性图像搜索网页应用</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+</head>
+
+<body>
+    <div class="container">
+        <h1>相似性图像搜索</h1>
+        <form action="/" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <input type="file" name="query_image" id="query_image" required>
+            <br>
+            <img id="uploaded_image" src="#" alt="Uploaded Image Preview" style="display:none; max-width:224px; max-height:224px;">
+            <br>
+            <button type="submit">搜索</button>
+        </form>
+        <script>
+        document.getElementById("query_image").addEventListener("change", function(e) {
+            let reader = new FileReader();
+            reader.onload = function(e) {
+                document.getElementById("uploaded_image").src = e.target.result;
+                document.getElementById("uploaded_image").style.display = "block";
+            };
+            reader.readAsDataURL(e.target.files[0]);
+        });
+        </script>
+        {% if uploaded_image %}
+        <h2>上传的图像</h2>
+        <img src="data:image/jpeg;base64,{{ uploaded_image }}" alt="Uploaded Image" style="max-width:224px; max-height:224px;">
+        {% endif %}
+
+        {% if images %}
+        <h2>相似的图像</h2>
+        <div class="grid">
+            {% for img, similarity in images %}
+            <div class="image-box">
+                <img src="data:image/jpeg;base64,{{ img }}" alt="Similar Image">
+                <div class="similarity-percentage">相似性: {{ similarity|floatformat:2 }}%</div>
+            </div>
+            {% endfor %}
+        </div>
+        {% endif %}
+    </div>
+</body>
+
+</html>
